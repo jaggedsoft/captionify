@@ -24,6 +24,9 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "examples.html"
+    "examples.html",
+    "package.json",
+    "Gruntfile.js",
+    "*.md"
   ]
 }
