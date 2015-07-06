@@ -6,6 +6,7 @@
 }
 
 .imgFigure {
+    display: inline-block;
     line-height: 0;
 }
 
@@ -25,6 +26,7 @@
     padding: 10px 15px;
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 
 .imgFigure__caption--bottom {
