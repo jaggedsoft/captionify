@@ -10,7 +10,7 @@ Captionify is non-jQuery semantic image caption generator library.
 
 ```html
 <link rel="stylesheet" href="path_to_css/captionify.min.css">
-<script stc="path_to_js/captionify.min.js"></script>
+<script src="path_to_js/captionify.min.js"></script>
 ```
 
 Using Captionfiy can be as simple as:
