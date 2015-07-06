@@ -27,6 +27,15 @@
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
+<ol>
+<li>Download Captionify from GitHub or install with Bower - <code>bower install captionify</code>.</li>
+<li>Add Captionify JS and CSS files to your <code>&lt;head&gt;</code>
+</li>
+</ol>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>path_to_css/captionify.min.css<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path_to_js/captionify.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
 <p>Using Captionfiy can be as simple as:</p>
 
 <div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
@@ -80,6 +89,17 @@
 <a id="styling" class="anchor" href="#styling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Styling</h2>
 
 <p>Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing <code>figure</code> tag will get this styling and styling for the <code>&lt;img&gt;</code> will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tags (<code>imgFigure</code> and <code>imgFigure__caption</code> by default). CSS file with some base styling is provided with Captionify. Feel free to modify it as you wish to suit your needs :)</p>
+
+<p>Captionify also works well in conjunction with the <a href="http://www.captionss.com">captionss</a> package for hassle-free caption styling. If you choose to use captionss, replace the Captionify CSS file the captionss CSS file. Once that is done you can pass in an appropriate class name for a <code>&lt;figure&gt;</code> tag like so:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
+    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+        containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>.myContainer<span class="pl-pds">"</span></span>,
+        figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>embed hide-smooth dark<span class="pl-pds">"</span></span>
+    });
+}</pre></div>
+
+<p>The above example should leave you with some nicely styled animated captions. See captionss <a href="http://www.captionss.com">website</a> for more info.</p>
 
 <h2>
 <a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser support</h2>
