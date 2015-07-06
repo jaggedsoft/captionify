@@ -16,6 +16,10 @@
   ],
   "license": "MIT",
   "moduleType": "globals",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bolatovumar/captionify.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
