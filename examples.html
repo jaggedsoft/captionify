@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Captionify examples</title>
+    <link rel="stylesheet" href="captionify.css">
+    <style type="text/css">
+        .s {
+            color: green;
+        }
+
+        .e {
+            color: red;
+        }
+
+        .group:after {
+            visibility: hidden;
+            display: block;
+            content: "";
+            clear: both;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Captionfiy tests</h1>
+    <p>Photo by <a href="https://www.flickr.com/photos/sunny987">Alex Akopyan</a></p>
+    <section>
+        <h2>Selecting all images within a tag</h2>
+        <img data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="s">With data-link (caption shows)</p>
+
+        <img data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="s">No data-link (caption shows)</p>
+
+        <img data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg">
+        <p class="e">No alt, no data-link (no caption)</p>
+    </section>
+
+    <article id="ex2" class="ex2">
+        <h2>Selecting images with a class within a tag with an id</h2>
+        <img class="caption" data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="s">Class with data-link (caption shows)</p>
+
+        <img data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="e">No class with data-link (no caption)</p>
+
+        <a href="https://www.flickr.com/photos/sunny987/17223800040"><img class="caption" data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night"></a>
+        <p class="s">Class with no data-link (caption shows)</p>
+    </article>
+
+    <article id="ex3" class="ex3">
+        <h2>Datacaption = true while selecting container with a class</h2>
+        <img data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="s">Data-caption with data-link (caption with link shows)</p>
+
+        <img data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="s">Data-caption, no data-link (caption shows)</p>
+
+        <img data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="e">No data-caption with data-link (no caption)</p>
+
+        <img src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="e">No data-caption with no data-link (no caption)</p>
+
+        <img data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p class="s">Data-caption, no data-link (caption shows)</p>
+    </article>
+
+    <article id="ex4" class="ex4 group">
+        <h2>Inheriting styles</h2>
+        <img style="float: left; width: 250px; padding: 15px; background: grey;" data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui velit mollitia minus voluptatibus assumenda necessitatibus quasi expedita voluptate laudantium a, nemo unde, ad, minima esse quam impedit totam quidem, nobis!</p>
+
+        <img style="float: right; padding: 10px; background: green;" data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus exercitationem, eaque officiis magnam rerum ex, odio vero, eligendi, consequuntur quasi placeat labore. Blanditiis maiores, nostrum iste provident ipsa non laudantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A doloremque voluptate, unde inventore pariatur voluptas laudantium rem, alias dolor ab beatae ut fuga debitis ex perferendis! Molestiae est laudantium praesentium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus non veniam maiores deserunt dicta eligendi, rerum quae! Cupiditate enim aut tempore suscipit dolor quis facere est at, laborum illo dolore.</p>
+
+        <img style="background: pink; padding: 20px; float: left;" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quis aliquam fugiat consequuntur soluta. Sed reprehenderit hic dignissimos ab, asperiores, commodi eos fugit aliquam esse impedit molestiae aspernatur est distinctio?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dicta repellat reprehenderit, unde suscipit perferendis, laudantium soluta provident dolore accusantium eos laborum quos a fuga vero voluptas libero rem magnam?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias suscipit quas temporibus officiis explicabo quisquam cum asperiores, dicta ab provident deserunt repellendus perferendis iusto nostrum consectetur ratione maxime alias distinctio.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo totam deserunt enim expedita debitis excepturi ipsa, atque numquam nostrum, explicabo reiciendis vero beatae ducimus minus tenetur voluptas inventore voluptatum eos.</p>
+    </article>
+
+    <article id="ex5" class="ex5">
+        <h2>Explicitly stated width attribute</h2>
+        <img data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night" width="500px">
+        <p class="s">Data-caption with data-link (caption with link shows)</p>
+
+        <img data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night"  width="300px">
+        <p class="s">Data-caption, no data-link (caption shows)</p>
+
+        <img data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" width="400px">
+        <p class="e">No alt with data-link (no caption)</p>
+    </article>
+
+    <article id="ex6" class="ex6">
+        <h2>Mode = bottom</h2>
+        <img data-caption="Din(n)er in the night" data-link="https://www.flickr.com/photos/sunny987/17223800040" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night" width="500px">
+        <p class="s">Data-caption with data-link (caption with link shows)</p>
+
+        <img data-caption="Din(n)er in the night" src="https://c2.staticflickr.com/8/7715/17223800040_03afaff6a6.jpg" alt="Diner in the night"  width="300px">
+        <p class="s">Data-caption, no data-link (caption shows)</p>
+    </article>
+
+    <article class="noImg">
+        <h2>No images</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi minus sed nam quo architecto praesentium vero accusamus, fugit ab, fugiat possimus suscipit. Commodi nisi autem ipsum numquam, dicta nostrum enim.
+    </article>
+
+    <script type="text/javascript" src="captionify.js"></script>
+    <script type="text/javascript">
+        var ex1 = new Captionify({
+            containerSelector: "section"
+        });
+
+        var ex2 = new Captionify({
+            containerSelector: "#ex2",
+            imgClassSelector: "caption"
+        });
+
+        var ex3 = new Captionify({
+            containerSelector: ".ex3",
+            dataCaption: true
+        });
+
+        var ex4 = new Captionify({
+            containerSelector: ".ex4"
+        });
+
+        var ex5 = new Captionify({
+            containerSelector: ".ex5"
+        });
+
+        var ex6 = new Captionify({
+            containerSelector: ".ex6",
+            mode: "bottom"
+        });
+
+        var ex7 = new Captionify({
+            containerSelector: ".noImg"
+        });
+    </script>
+</body>
+</html>
+

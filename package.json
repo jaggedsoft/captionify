@@ -1,0 +1,21 @@
+{
+  "name": "captionify",
+  "version": "0.1.0",
+  "description": "Captionify is non-jquery semantic image caption generator",
+  "devDependencies": {
+    "grunt-contrib-cssmin": "~0.12.3",
+    "grunt-contrib-uglify": "~0.9.1",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt": "~0.4.5"
+  },
+  "main": "captionify.js",
+  "keywords": [
+    "js",
+    "library",
+    "captions",
+    "image",
+    "non-jquery"
+  ],
+  "author": "Umar Bolatov",
+  "license": "MIT"
+}

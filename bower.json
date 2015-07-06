@@ -1,0 +1,25 @@
+{
+  "name": "captionify",
+  "main": "captionify.js",
+  "version": "0.1.0",
+  "authors": [
+    "Bolatov Umar <bolatovumar@gmail.com>"
+  ],
+  "description": "Captionify is non-jquery semantic image caption generator",
+  "keywords": [
+    "caption",
+    "captions",
+    "image",
+    "images",
+    "non-jquery",
+    "pure",
+  ],
+  "license": "MIT",
+  "moduleType": "globals",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "examples.html"
+  ]
+}
