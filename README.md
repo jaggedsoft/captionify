@@ -69,6 +69,19 @@ var imageCaptions = new Captionify({
 
 Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing `figure` tag will get this styling and styling for the `<img>` will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to `<figure>` and `<figcaption>` tags (`imgFigure` and `imgFigure__caption` by default). CSS file with some base styling is provided with Captionify. Feel free to modify it as you wish to suit your needs :)
 
+Captionify also works well in conjunction with the [captionss](http://www.captionss.com) package for hassle-free caption styling. If you choose to use captionss, replace the Captionify CSS file the captionss CSS file. Once that is done you can pass in an appropriate class name for a `<figure>` tag like so:
+
+```js
+window.onload = function(){
+    var imageCaptions = new Captionify({
+        containerSelector: ".myContainer",
+        figureClass: "embed hide-smooth dark"
+    });
+}
+```
+
+The above example should leave you with some nicely styled animated captions. See captionss [website](http://www.captionss.com) for more info.
+
 
 ## Browser support
 
