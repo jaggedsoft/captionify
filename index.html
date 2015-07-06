@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Captionify by bolatovumar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Captionify</h1>
+      <h2 class="project-tagline">Captionify - semantic image caption generator library in pure JS</h2>
+      <a href="https://github.com/bolatovumar/captionify" class="btn">View on GitHub</a>
+      <a href="https://github.com/bolatovumar/captionify/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/bolatovumar/captionify/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="captionify" class="anchor" href="#captionify" aria-hidden="true"><span class="octicon octicon-link"></span></a>Captionify</h1>
+
+<p>Captionify is non-jQuery semantic image caption generator library.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Using Captionfiy can be as simple as:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
+    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>();
+}</pre></div>
+
+<p>This will launch Captionify with the default settings. Captionify will caption all images contained in the <code>&lt;body&gt;</code> tag. It will use images' <code>alt</code> attribute as caption text. It will also wrap all images with text in their <code>alt</code> attribute in an HTML5 <code>&lt;figure&gt;</code> tag and put the caption in a <code>&lt;figcaption&gt;</code> tag. The example below modifies some of the default options:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
+    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+        containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>.pageContent<span class="pl-pds">"</span></span>,
+        figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>image<span class="pl-pds">"</span></span>,
+        figcaptionClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>imageCaption<span class="pl-pds">"</span></span>,
+        imgClassSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>caption<span class="pl-pds">"</span></span>
+    });
+}</pre></div>
+
+<p>The above example will caption all images with a class of <code>caption</code> contained in an element with a <code>pageContent</code> class. It also changes the default <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tag classes.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
+    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+        containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>,
+        dataCaption<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+    });
+}</pre></div>
+
+<p>In this example all images in <code>&lt;article&gt;</code> are selected. Captionify will used the <code>data-caption</code> attribute text for captions instead of the default <code>alt</code> attribute.</p>
+
+<h3>
+<a id="hyperlinked-captions" class="anchor" href="#hyperlinked-captions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hyperlinked captions</h3>
+
+<p>To create a hyperlinked caption specify a <code>data-link</code> attribute on an image like so:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>example.jpg<span class="pl-pds">"</span></span> <span class="pl-e">data-link</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.example.org/some-page<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Example image<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+    containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>body<span class="pl-pds">"</span></span>, <span class="pl-c">// pass in a tag (like article), a class ( like .content) or id (like #images)</span>
+    dataCaption<span class="pl-k">:</span> <span class="pl-c1">false</span>, <span class="pl-c">// set to true if you would like to use a 'data-caption' attribute for captions instead of the default 'alt' attribute</span>
+    figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>imgFigure<span class="pl-pds">"</span></span>, <span class="pl-c">// default class for the &lt;figure&gt; tag</span>
+    figcaptionClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>imgFigure__caption<span class="pl-pds">"</span></span>, <span class="pl-c">// default class for the &lt;figcaption&gt; tag</span>
+    imgClassSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>, <span class="pl-c">// pass in a class name of images which you would like to caption</span>
+    inheritStyles<span class="pl-k">:</span> <span class="pl-c1">true</span>, <span class="pl-c">// &lt;figure&gt; tag will inherit any direct styling Ii.e., inline CSS) of its contained &lt;img&gt;. Set to false to disable this behaviour</span>
+    mode<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>overlay<span class="pl-pds">"</span></span>, <span class="pl-c">// overlay | bottom</span>
+    setFigureWidth<span class="pl-k">:</span> <span class="pl-c1">true</span> <span class="pl-c">// set to false if you have an explicitly stated width attribute on your images (in px) and you do not want the &lt;figure&gt; tag to inherit this width</span>
+});</pre></div>
+
+<h2>
+<a id="styling" class="anchor" href="#styling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Styling</h2>
+
+<p>Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing <code>figure</code> tag will get this styling and styling for the <code>&lt;img&gt;</code> will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tags (<code>imgFigure</code> and <code>imgFigure__caption</code> by default). CSS file with some base styling is provided with Captionify. Feel free to modify it as you wish to suit your needs :)</p>
+
+<h2>
+<a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser support</h2>
+
+<p>Tested in:</p>
+
+<ul>
+<li>Chrome 14+</li>
+<li>Firefox 3+</li>
+<li>Opera 10.6+</li>
+<li>Safari 4+</li>
+<li>IE9+</li>
+<li>iOS 3+</li>
+<li>Android 2.3+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/bolatovumar/captionify">Captionify</a> is maintained by <a href="https://github.com/bolatovumar">bolatovumar</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-35710767-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
