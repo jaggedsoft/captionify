@@ -67,7 +67,7 @@ var imageCaptions = new Captionify({
 
 ## Styling
 
-Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing `figure` tag will get this styling and styling for the `<img>` will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to `<figure>` and `<figcaption>` tags (`imgFigure` and `imgFigure__caption` by default). CSS file with some base styling are provided with Captionify. Feel free to modify them as you wish to suit your needs :)
+Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing `figure` tag will get this styling and styling for the `<img>` will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to `<figure>` and `<figcaption>` tags (`imgFigure` and `imgFigure__caption` by default). CSS file with some base styling is provided with Captionify. Feel free to modify it as you wish to suit your needs :)
 
 
 ## Browser support
