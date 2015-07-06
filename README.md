@@ -5,6 +5,14 @@ Captionify is non-jQuery semantic image caption generator library.
 
 ## Usage
 
+1. Download Captionify from GitHub or install with Bower - `bower install captionify`.
+2. Add Captionify JS and CSS files to your `<head>`
+
+```html
+<link rel="stylesheet" href="path_to_css/captionify.min.css">
+<script stc="path_to_js/captionify.min.js"></script>
+```
+
 Using Captionfiy can be as simple as:
 
 ```js
