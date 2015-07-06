@@ -16,6 +16,10 @@
     "image",
     "non-jquery"
   ],
+  "repository" : {
+    "type" : "git",
+    "url": "git://github.com/bolatovumar/captionify.git"
+  },
   "author": "Umar Bolatov",
   "license": "MIT"
 }
