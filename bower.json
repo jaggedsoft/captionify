@@ -12,7 +12,7 @@
     "image",
     "images",
     "non-jquery",
-    "pure",
+    "pure"
   ],
   "license": "MIT",
   "moduleType": "globals",
