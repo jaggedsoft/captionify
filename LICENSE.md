@@ -1,5 +1,6 @@
 # MIT LICENSE
 Copyright 2015  - Umar Bolatov <bolatovumar@gmail.com>
+
 http://bolatovumar.github.io/captionify/
 
 Permission is hereby granted, free of charge, to any person obtaining
