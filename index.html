@@ -25,44 +25,61 @@
 <p>Captionify is non-jQuery semantic image caption generator library.</p>
 
 <h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
 
 <ol>
 <li>Download Captionify from GitHub or install with Bower - <code>bower install captionify</code>.</li>
-<li>Add Captionify JS and CSS files to your <code>&lt;head&gt;</code>
-</li>
-</ol>
+<li>
+<p>Add Captionify JS and CSS files to <code>&lt;head&gt;</code></p>
 
 <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>path_to_css/captionify.min.css<span class="pl-pds">"</span></span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path_to_js/captionify.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+</li>
+<li>
+<p>Initiate Captionify like so:</p>
 
-<p>Using Captionfiy can be as simple as:</p>
-
-<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
-    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>();
-}</pre></div>
-
-<p>This will launch Captionify with the default settings. Captionify will caption all images contained in the <code>&lt;body&gt;</code> tag. It will use images' <code>alt</code> attribute as caption text. It will also wrap all images with text in their <code>alt</code> attribute in an HTML5 <code>&lt;figure&gt;</code> tag and put the caption in a <code>&lt;figcaption&gt;</code> tag. The example below modifies some of the default options:</p>
-
-<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
-    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
-        containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>.pageContent<span class="pl-pds">"</span></span>,
-        figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>image<span class="pl-pds">"</span></span>,
-        figcaptionClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>imageCaption<span class="pl-pds">"</span></span>,
-        imgClassSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>caption<span class="pl-pds">"</span></span>
+<div class="highlight highlight-js"><pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-c1">document</span>.addEventListener(<span class="pl-s"><span class="pl-pds">"</span>DOMContentLoaded<span class="pl-pds">"</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">event</span>) {
+        <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>();
     });
-}</pre></div>
+<span class="pl-k">&lt;</span>/script<span class="pl-k">&gt;</span></pre></div>
+</li>
+</ol>
+
+<p>This will launch Captionify with the default settings. Captionify will caption all images contained in the <code>&lt;body&gt;</code> tag. It will use images' <code>alt</code> attribute as caption text. It will also wrap all images with text in their <code>alt</code> attribute in an HTML5 <code>&lt;figure&gt;</code> tag and put the caption in a <code>&lt;figcaption&gt;</code> tag.</p>
+
+<h2>
+<a id="further-usage-examples" class="anchor" href="#further-usage-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further usage examples</h2>
+
+<p>The example below modifies some of the default options:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+    containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>.pageContent<span class="pl-pds">"</span></span>,
+    figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>image<span class="pl-pds">"</span></span>,
+    figcaptionClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>imageCaption<span class="pl-pds">"</span></span>,
+    imgClassSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>caption<span class="pl-pds">"</span></span>
+});</pre></div>
 
 <p>The above example will caption all images with a class of <code>caption</code> contained in an element with a <code>pageContent</code> class. It also changes the default <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tag classes.</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
-    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
-        containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>,
-        dataCaption<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
-    });
-}</pre></div>
+<hr>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+    containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>,
+    dataCaption<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+});</pre></div>
 
 <p>In this example all images in <code>&lt;article&gt;</code> are selected. Captionify will used the <code>data-caption</code> attribute text for captions instead of the default <code>alt</code> attribute.</p>
+
+<hr>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+    containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>,
+    dataCaption<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>,
+    mode<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bottom<span class="pl-pds">"</span></span>
+});</pre></div>
+
+<p>In this example the caption will be placed below the image instead of being overlayed on top of the image if the standard Captionify CSS file is included on your page.</p>
 
 <h3>
 <a id="hyperlinked-captions" class="anchor" href="#hyperlinked-captions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hyperlinked captions</h3>
@@ -90,14 +107,12 @@
 
 <p>Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing <code>figure</code> tag will get this styling and styling for the <code>&lt;img&gt;</code> will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tags (<code>imgFigure</code> and <code>imgFigure__caption</code> by default). CSS file with some base styling is provided with Captionify. Feel free to modify it as you wish to suit your needs :)</p>
 
-<p>Captionify also works well in conjunction with the <a href="http://www.captionss.com">captionss</a> package for hassle-free caption styling. If you choose to use captionss, replace the Captionify CSS file the captionss CSS file. Once that is done you can pass in an appropriate class name for a <code>&lt;figure&gt;</code> tag like so:</p>
+<p>Captionify also works well in conjunction with the <a href="http://www.captionss.com">captionss</a> package for hassle-free caption styling. If you choose to use captionss, replace the Captionify CSS file with the captionss CSS file. Once that is done you can pass in an appropriate class name for a <code>&lt;figure&gt;</code> tag (as specified by captionss documentation) like so:</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">onload</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(){
-    <span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
-        containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>.myContainer<span class="pl-pds">"</span></span>,
-        figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>embed hide-smooth dark<span class="pl-pds">"</span></span>
-    });
-}</pre></div>
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> imageCaptions <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Captionify</span>({
+    containerSelector<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>.myContainer<span class="pl-pds">"</span></span>,
+    figureClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>embed hide-smooth dark<span class="pl-pds">"</span></span>
+});</pre></div>
 
 <p>The above example should leave you with some nicely styled animated captions. See captionss <a href="http://www.captionss.com">website</a> for more info.</p>
 
