@@ -3,49 +3,65 @@
 Captionify is non-jQuery semantic image caption generator library.
 
 
-## Usage
+## Basic Usage
 
 1. Download Captionify from GitHub or install with Bower - `bower install captionify`.
-2. Add Captionify JS and CSS files to your `<head>`
+2. Add Captionify JS and CSS files to `<head>`
 
 ```html
 <link rel="stylesheet" href="path_to_css/captionify.min.css">
 <script src="path_to_js/captionify.min.js"></script>
 ```
 
-Using Captionfiy can be as simple as:
+3. Initiate Captionify like so:
 
 ```js
-window.onload = function(){
-    var imageCaptions = new Captionify();
-}
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var imageCaptions = new Captionify();
+    });
+</script>
 ```
 
-This will launch Captionify with the default settings. Captionify will caption all images contained in the `<body>` tag. It will use images' `alt` attribute as caption text. It will also wrap all images with text in their `alt` attribute in an HTML5 `<figure>` tag and put the caption in a `<figcaption>` tag. The example below modifies some of the default options:
+This will launch Captionify with the default settings. Captionify will caption all images contained in the `<body>` tag. It will use images' `alt` attribute as caption text. It will also wrap all images with text in their `alt` attribute in an HTML5 `<figure>` tag and put the caption in a `<figcaption>` tag.
+
+
+## Further usage examples
+
+The example below modifies some of the default options:
 
 ```js
-window.onload = function(){
-    var imageCaptions = new Captionify({
-        containerSelector: ".pageContent",
-        figureClass: "image",
-        figcaptionClass: "imageCaption",
-        imgClassSelector: "caption"
-    });
-}
+var imageCaptions = new Captionify({
+    containerSelector: ".pageContent",
+    figureClass: "image",
+    figcaptionClass: "imageCaption",
+    imgClassSelector: "caption"
+});
 ```
 
 The above example will caption all images with a class of `caption` contained in an element with a `pageContent` class. It also changes the default `<figure>` and `<figcaption>` tag classes.
 
+---------------------------------------
+
 ```js
-window.onload = function(){
-    var imageCaptions = new Captionify({
-        containerSelector: "article",
-        dataCaption: "true"
-    });
-}
+var imageCaptions = new Captionify({
+    containerSelector: "article",
+    dataCaption: "true"
+});
 ```
 
 In this example all images in `<article>` are selected. Captionify will used the `data-caption` attribute text for captions instead of the default `alt` attribute.
+
+---------------------------------------
+
+```js
+var imageCaptions = new Captionify({
+    containerSelector: "article",
+    dataCaption: "true",
+    mode: "bottom"
+});
+```
+In this example the caption will be placed below the image instead of being overlayed on top of the image if the standard Captionify CSS file is included on your page.
 
 
 ### Hyperlinked captions
@@ -77,15 +93,13 @@ var imageCaptions = new Captionify({
 
 Captionify does not inject any styling (actually, it does in some cases. If your images have an explicitly stated width attribute or inline CSS, the containing `figure` tag will get this styling and styling for the `<img>` will be removed. This behavior can be disabled through options). All styling should be done with CSS using the classes assigned to `<figure>` and `<figcaption>` tags (`imgFigure` and `imgFigure__caption` by default). CSS file with some base styling is provided with Captionify. Feel free to modify it as you wish to suit your needs :)
 
-Captionify also works well in conjunction with the [captionss](http://www.captionss.com) package for hassle-free caption styling. If you choose to use captionss, replace the Captionify CSS file the captionss CSS file. Once that is done you can pass in an appropriate class name for a `<figure>` tag like so:
+Captionify also works well in conjunction with the [captionss](http://www.captionss.com) package for hassle-free caption styling. If you choose to use captionss, replace the Captionify CSS file with the captionss CSS file. Once that is done you can pass in an appropriate class name for a `<figure>` tag (as specified by captionss documentation) like so:
 
 ```js
-window.onload = function(){
-    var imageCaptions = new Captionify({
-        containerSelector: ".myContainer",
-        figureClass: "embed hide-smooth dark"
-    });
-}
+var imageCaptions = new Captionify({
+    containerSelector: ".myContainer",
+    figureClass: "embed hide-smooth dark"
+});
 ```
 
 The above example should leave you with some nicely styled animated captions. See captionss [website](http://www.captionss.com) for more info.
