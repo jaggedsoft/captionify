@@ -8,20 +8,20 @@ Captionify is non-jQuery semantic image caption generator library.
 1. Download Captionify from GitHub or install with Bower - `bower install captionify`.
 2. Add Captionify JS and CSS files to `<head>`
 
-```html
-<link rel="stylesheet" href="path_to_css/captionify.min.css">
-<script src="path_to_js/captionify.min.js"></script>
-```
+    ```html
+    <link rel="stylesheet" href="path_to_css/captionify.min.css">
+    <script src="path_to_js/captionify.min.js"></script>
+    ```
 
 3. Initiate Captionify like so:
-
-```js
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        var imageCaptions = new Captionify();
-    });
-</script>
-```
+    
+    ```js
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var imageCaptions = new Captionify();
+        });
+    </script>
+    ```
 
 This will launch Captionify with the default settings. Captionify will caption all images contained in the `<body>` tag. It will use images' `alt` attribute as caption text. It will also wrap all images with text in their `alt` attribute in an HTML5 `<figure>` tag and put the caption in a `<figcaption>` tag.
 
