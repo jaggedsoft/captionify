@@ -1,6 +1,6 @@
 # Captionify
 
-Captionify is non-jQuery semantic image caption generator library.
+Captionify is a non-jQuery semantic image caption generator library.
 
 
 ## Basic Usage
