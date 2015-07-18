@@ -6,6 +6,10 @@
     "Bolatov Umar <bolatovumar@gmail.com>"
   ],
   "description": "Captionify is non-jquery semantic image caption generator",
+  "main": [
+    "captionify.min.js",
+    "captionify.min.css"
+  ],
   "keywords": [
     "caption",
     "captions",
