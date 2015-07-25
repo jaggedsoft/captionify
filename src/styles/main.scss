@@ -1,0 +1,181 @@
+@import "variables";
+
+html {
+    font: {
+        size: $base-size;
+    }
+}
+
+body {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: {
+        top: 10em;
+    }
+    font: {
+        family: $font-fam;
+    }
+
+    * {
+        margin: {
+            top: 0;
+        }
+    }
+}
+
+header {
+    margin: {
+        bottom: 5em;
+    }
+}
+
+code {
+    display: inline-block;
+    background: {
+        color: $lighter-grey;
+    }
+    font: {
+        family: 'Source Code Pro', 'Consolas', monospace;
+    }
+    padding: 2px 5px;
+}
+
+pre {
+    background: {
+        color: $lighter-grey;
+    }
+    padding: 0.8rem 1rem;
+    overflow: auto;
+}
+
+ol {
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin-bottom: 2em;
+}
+
+hr {
+    border: {
+        top: {
+            color: $grey;
+        }
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+.imgFigure {
+    max-width: 100%;
+}
+
+h1 {
+    color: $title-color;
+    font: {
+        size: 5em;
+        weight: 300;
+    }
+
+    margin: {
+        bottom: 0;
+    }
+}
+
+h2 {
+    color: $subtitle-color;
+    font: {
+        weight: 400;
+        size: 1em;
+    }
+    margin: {
+        bottom: 3em;
+    }
+}
+
+main {
+    h1 {
+        font: {
+            size: 3em;
+        }
+        margin: {
+            bottom: 1rem;
+        }
+    }
+    h2 {
+        color: $title-color;
+        font: {
+            size: 2em;
+            weight: 300;
+        }
+        margin: {
+            bottom: 1rem;
+        }
+    }
+}
+
+section {
+    margin: {
+        bottom: 4rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 1em;
+    color: $black;
+    border: {
+        color: $black;
+        style: solid;
+        width: 1px;
+    }
+    padding: 1em;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: $light-grey;
+    }
+
+    & + .btn {
+        margin-left: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font: {
+            size: 12px;
+        }
+    }
+
+    body {
+        padding: 0 12px;
+    }
+
+    ol {
+        list-style-position: inside;
+    }
+
+    article {
+        img {
+            width: 200px;
+        }
+    }
+}
+

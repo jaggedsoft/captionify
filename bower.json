@@ -1,0 +1,10 @@
+{
+    "name": "captionify-site",
+    "version": "1.0.0",
+    "license": "MIT",
+    "dependencies": {
+        "captionify": "*",
+        "normalize.css": "^3.0.3"
+    },
+    "private": "true"
+}
