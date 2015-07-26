@@ -89,7 +89,8 @@ gulp.task('prod', ['css', 'imagemin'], function () {
             css: [minifyCss(), 'concat'],
             html: [minifyHtml({
                 conditionals: true,
-                empty: true
+                empty: true,
+                quotes: true
             })],
             js: [uglify()],
             js1: [uglify()]
