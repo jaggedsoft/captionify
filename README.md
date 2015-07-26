@@ -82,9 +82,9 @@ var imageCaptions = new Captionify({
     figureClass: "imgFigure", // default class for the <figure> tag
     figcaptionClass: "imgFigure__caption", // default class for the <figcaption> tag
     imgClassSelector: "", // pass in a class name of images which you would like to caption
-    inheritStyles: true, // <figure> tag will inherit any direct styling Ii.e., inline CSS) of its contained <img>. Set to false to disable this behaviour
+    inheritStyles: true, // <figure> tag will inherit any direct styling (i.e., inline CSS) of its contained <img>. Set to false to disable this behaviour
     mode: "overlay", // overlay | bottom
-    setFigureWidth: true // set to false if you have an explicitly stated width attribute on your images (in px) and you do not want the <figure> tag to inherit this width
+    setFigureWidth: true // sets the container width to the image width if it contains an explicit width attribute. Set to false to disable this behaviour
 });
 ```
 
