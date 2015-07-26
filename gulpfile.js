@@ -83,7 +83,7 @@ gulp.task('imagemin', function () {
         .pipe(gulp.dest(dest + '/img'));
 });
 
-gulp.task('prod', ['css', 'imagemin'], function () {
+gulp.task('prod', ['css', 'imagemin', 'lint'], function () {
     return gulp.src(src + '/*.html')
         .pipe(usemin({
             css: [minifyCss(), 'concat'],
