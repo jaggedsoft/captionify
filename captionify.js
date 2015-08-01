@@ -11,9 +11,6 @@
     "use strict";
 
     function Captionify(options) {
-        // Set user options
-        this.options = options = _extend({}, options);
-
         // Default options
         var defaults = {
             containerSelector: "body",
@@ -26,12 +23,8 @@
             setFigureWidth: true
         };
 
-        // Set default options
-        for (var name in defaults) {
-            if (!(name in options)) {
-                options[name] = defaults[name];
-            }
-        }
+        // Set user options
+        this.options = options = _extend({}, defaults, options);
 
         this._init();
     }
@@ -130,69 +123,37 @@
     };
 
     function _extend(dst, src) {
-        if (dst && src) {
-            for (var key in src) {
-                if (src.hasOwnProperty(key)) {
-                    dst[key] = src[key];
-                }
-            }
+        if (src) {
+            Object.keys(src).forEach(function(key){
+                dst[key] = src[key];
+            });
         }
 
         return dst;
     }
 
     function _getAttribute(element, attribute) {
-        if (element.hasAttribute(attribute)) {
-            attribute = element.getAttribute(attribute);
 
-            return attribute;
-        }
+        return element.getAttribute(attribute) || false;
 
-        return false;
     }
 
     function _getContainer(containerStr) {
-        var containerEl,
-            getType = containerStr.substring(0, 1),
-            selectionStr = containerStr.substring(1);
 
-        if (getType === ".") {
-            containerEl = document.getElementsByClassName(selectionStr);
-        } else if (getType === "#") {
-            containerEl = [document.getElementById(selectionStr)];
-        } else {
-            containerEl = document.getElementsByTagName(containerStr);
-        }
+        return document.querySelectorAll(containerStr);
 
-        return containerEl;
     }
 
     function _getImages(containerEl, imgClass) {
-        var imagesArray = [],
-            images;
+        var selector = "img";
 
-        // Convert selected container(s) to array
-        containerEl = Array.prototype.slice.call(containerEl);
-
-        // Iterate over each container element
-        containerEl.forEach(function(element, index, array) {
-            // Select all images in a container
+        return Array.prototype.map.call(containerEl, function(container){
             if (imgClass) {
-                images = element.getElementsByClassName(imgClass);
-            } else {
-                images = element.getElementsByTagName("img");
+                selector += '.' + imgClass;
             }
-
-            // Convert HTMLCollection to array
-            images = Array.prototype.slice.call(images);
-
-            // Add each image to an array
-            for (var i = images.length - 1; i >= 0; i--) {
-                imagesArray.push(images[i]);
-            }
+            return container.querySelectorAll(selector);
         });
 
-        return imagesArray;
     }
 
     function _insertAfter(newNode, referenceNode) {
