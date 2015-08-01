@@ -114,6 +114,6 @@ Tested in:
 * Opera 11.6+
 * Safari 5.1+
 * IE9+
-* iOS 3+
+* iOS 6+
 * Android 4.2+
 * Windows Phone 8.1
