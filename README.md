@@ -109,10 +109,11 @@ The above example should leave you with some nicely styled animated captions. Se
 
 Tested in:
 
-* Chrome 14+
-* Firefox 3+
-* Opera 10.6+
-* Safari 4+
+* Chrome 17+
+* Firefox 4.0+
+* Opera 11.6+
+* Safari 5.1+
 * IE9+
 * iOS 3+
-* Android 2.3+
+* Android 4.2+
+* Windows Phone 8.1
