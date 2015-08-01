@@ -24,7 +24,7 @@
         };
 
         // Set user options
-        this.options = options = _extend({}, defaults, options);
+        this.options = _extend(defaults, options);
 
         this._init();
     }
