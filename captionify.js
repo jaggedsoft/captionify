@@ -145,15 +145,18 @@
     }
 
     function _getImages(containerEl, imgClass) {
-        var selector = "img";
+        var imgArr = [],
+            selector = "img";
 
-        return Array.prototype.map.call(containerEl, function(container){
+        Array.prototype.forEach.call(containerEl, function(container){
             if (imgClass) {
                 selector += '.' + imgClass;
             }
-            return container.querySelectorAll(selector);
+            var imgs = container.querySelectorAll(selector);
+            imgArr.push.apply(imgArr, imgs);
         });
 
+        return imgArr;
     }
 
     function _insertAfter(newNode, referenceNode) {
